@@ -46,6 +46,11 @@
                                 style="{{ request()->is('pacientes') ? 'color: #17B8A6;' : '' }}"
                                 href="{{ route('pacientes.index') }}">{{ __('Pacientes') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->is('medicos') ? 'active fw-bold' : '' }}"
+                                style="{{ request()->is('medicos') ? 'color: #17B8A6;' : '' }}"
+                                href="{{ route('medicos.index') }}">{{ __('Médicos') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
