@@ -18,9 +18,14 @@ class Medico extends Model
         return $query->when($request, function (Builder $query, $request) {
             $query->where(function (Builder $query) use ($request) {
                 $query->when($request->nome, fn(Builder $query, $nome) => $query->where('nome', 'like', '%' . $nome . '%'))
-                    ->when($request->crm, fn(Builder $query, $crm) => $query->orWhere('crm', $crm ))
+                    ->when($request->crm, fn(Builder $query, $crm) => $query->orWhere('crm', $crm))
                     ->when($request->especialidade, fn(Builder $query, $especialidade) => $query->orWhere('especialidade', 'like', '%' . $especialidade . '%'));
             });
         });
+    }
+
+    public function atendimentos()
+    {
+        return $this->hasMany(Atendimento::class);
     }
 }

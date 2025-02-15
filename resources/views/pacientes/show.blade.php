@@ -32,6 +32,23 @@
                             </div>
                             <h5>Atendimentos</h5>
                             <hr>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Médico</th>
+                                        <th scope="col">Data de Atendimento</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($atendimentos as $atendimento)
+                                        <tr>
+                                            <td>{{ $atendimento->medico->nome }}</td>
+                                            <td>{{ $atendimento->data_atendimento->format('Y-m-d') }}</td>
+                                        </tr>
+                                    @endforeach
+                                    {{ $atendimentos->links() }}
+                                </tbody>
+                            </table>
                             <div class="text-end">
                                 <a href="{{ route('pacientes.index') }}" class="btn btn-secondary">Voltar</a>
                             </div>

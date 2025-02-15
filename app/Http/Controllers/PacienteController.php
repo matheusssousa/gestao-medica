@@ -48,7 +48,8 @@ class PacienteController extends Controller
      */
     public function show(Paciente $paciente)
     {
-        return view('pacientes.show', ['paciente' => $paciente]);
+        $atendimentos = $paciente->atendimentos()->orderBy('data_atendimento', 'desc')->paginate(10);
+        return view('pacientes.show', compact('paciente', 'atendimentos'));
     }
 
     /**

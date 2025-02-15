@@ -14,7 +14,7 @@ class PacienteRepository implements PacienteRepositoryInterface
 
     public function getById($id)
     {
-        return Paciente::findOrFail($id);
+        return Paciente::with('atendimentos')->findOrFail($id);
     }
 
     public function create(array $data)
