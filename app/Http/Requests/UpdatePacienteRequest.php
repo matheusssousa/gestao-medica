@@ -29,6 +29,7 @@ class UpdatePacienteRequest extends FormRequest
                 'string',
                 'max:14',
                 Rule::unique('pacientes', 'cpf')->ignore($this->route('paciente')),
+                'cpf',
             ],
             'email' => [
                 'string',
@@ -53,6 +54,7 @@ class UpdatePacienteRequest extends FormRequest
             'cpf.string' => 'O campo CPF deve ser uma string.',
             'cpf.max' => 'O campo CPF deve ter no máximo 14 caracteres.',
             'cpf.unique' => 'O CPF informado já está cadastrado.',
+            'cpf.cpf' => 'O CPF informado não é válido.',
             'email.string' => 'O campo e-mail deve ser uma string.',
             'email.email' => 'O campo e-mail deve ser um e-mail válido.',
             'email.max' => 'O campo e-mail deve ter no máximo 255 caracteres.',
