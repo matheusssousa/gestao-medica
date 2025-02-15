@@ -48,7 +48,7 @@ services:
       - "5173:5173"
     networks:
       - gestao_medica_network
-    command: ["npm", "run", "dev"]
+    command: ["sh", "-c", "npm install && npm run dev"]
 
 networks:
   gestao_medica_network:
