@@ -11,11 +11,11 @@
                             @csrf
 
                             <div class="form-group mb-3">
-                                <label for="nome" class="form-label">{{ __('Nome') }}</label>
-                                <input id="nome" type="text"
-                                    class="form-control @error('nome') is-invalid @enderror" name="nome"
-                                    value="{{ old('nome') }}" required autocomplete="nome" autofocus>
-                                @error('nome')
+                                <label for="name" class="form-label">{{ __('Nome') }}</label>
+                                <input id="name" type="text"
+                                    class="form-control @error('name') is-invalid @enderror" name="name"
+                                    value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                @error('name')
                                     <div class="invalid-feedback">
                                         <strong>{{ $message }}</strong>
                                     </div>
@@ -26,7 +26,7 @@
                                 <label for="email" class="form-label">{{ __('E-mail') }}</label>
                                 <input id="email" type="email"
                                     class="form-control @error('email') is-invalid @enderror" name="email"
-                                    value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    value="{{ old('email') }}" required autocomplete="email">
                                 @error('email')
                                     <div class="invalid-feedback">
                                         <strong>{{ $message }}</strong>
@@ -38,7 +38,7 @@
                                 <label for="password" class="form-label">{{ __('Senha') }}</label>
                                 <input id="password" type="password"
                                     class="form-control @error('password') is-invalid @enderror" name="password"
-                                    value="{{ old('password') }}" required autocomplete="password" autofocus>
+                                    required autocomplete="new-password">
                                 @error('password')
                                     <div class="invalid-feedback">
                                         <strong>{{ $message }}</strong>
@@ -47,11 +47,11 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="password-confirm" class="form-label">{{ __('Confirmar Senha') }}</label>
-                                <input id="password-confirm" type="password"
-                                    class="form-control @error('password-confirm') is-invalid @enderror" name="password-confirm"
-                                    value="{{ old('password-confirm') }}" required autocomplete="password-confirm" autofocus>
-                                @error('password-confirm')
+                                <label for="password_confirmation" class="form-label">{{ __('Confirmar Senha') }}</label>
+                                <input id="password_confirmation" type="password"
+                                    class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation"
+                                    required autocomplete="new-password">
+                                @error('password_confirmation')
                                     <div class="invalid-feedback">
                                         <strong>{{ $message }}</strong>
                                     </div>
