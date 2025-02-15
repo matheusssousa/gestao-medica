@@ -49,7 +49,8 @@ class MedicoController extends Controller
      */
     public function show(Medico $medico)
     {
-        return view('medicos.show', compact('medico'));
+        $atendimentos = $medico->atendimentos()->orderBy('data_atendimento', 'desc')->paginate(10);
+        return view('medicos.show', compact('medico', 'atendimentos'));
     }
 
     /**

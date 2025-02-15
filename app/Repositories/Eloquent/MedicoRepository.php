@@ -14,7 +14,7 @@ class MedicoRepository implements MedicoRepositoryInterface
 
     public function getById($id)
     {
-        return Medico::findOrFail($id);
+        return Medico::with('atendimentos')->findOrFail($id);
     }
 
     public function create(array $data)
