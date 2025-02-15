@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-10 d-flex flex-column gap-3">
+            <div class="col-md-12 d-flex flex-column gap-3">
                 <div class="card p-3" style="background-color: white;">
                     <h5>Pacientes</h5>
                     <hr>
@@ -31,7 +31,8 @@
                             <a href="{{ route('pacientes.create') }}" class="btn btn-outline-success">Cadastrar</a>
                             <div>
                                 <button type="submit" class="btn btn-outline-info float-right">Pesquisar</button>
-                                <a class="btn btn-outline-danger float-right" href="{{ route('pacientes.index') }}">Limpar Campos</a>
+                                <a class="btn btn-outline-danger float-right" href="{{ route('pacientes.index') }}">Limpar
+                                    Campos</a>
                             </div>
                         </div>
                     </form>
@@ -53,11 +54,15 @@
                                     <td>{{ $paciente->email }}</td>
                                     <td>
                                         {{ substr($paciente->cpf, 0, 3) . '.' . substr($paciente->cpf, 3, 3) . '.' . substr($paciente->cpf, 6, 3) . '-' . substr($paciente->cpf, 9, 2) }}
-                                    </td>                                    
+                                    </td>
                                     <td>
-                                        <a href="{{ route('pacientes.show', $paciente->id) }}" class="btn btn-sm btn-outline-secondary">Visualizar</a>
-                                        <a href="{{ route('pacientes.edit', $paciente->id) }}" class="btn btn-sm btn-outline-primary">Editar</a>
-                                        <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-id="{{ $paciente->id }}">Excluir</button>
+                                        <a href="{{ route('pacientes.show', $paciente->id) }}"
+                                            class="btn btn-sm btn-outline-secondary">Visualizar</a>
+                                        <a href="{{ route('pacientes.edit', $paciente->id) }}"
+                                            class="btn btn-sm btn-outline-primary">Editar</a>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal"
+                                            data-bs-target="#confirmDeleteModal"
+                                            data-id="{{ $paciente->id }}">Excluir</button>
                                     </td>
                                 </tr>
                             @empty
@@ -67,16 +72,15 @@
                             @endforelse
                         </tbody>
                     </table>
-                    <div class="d-flex justify-content-center">
-                        {{ $pacientes->links() }}
-                    </div>
+                    {{ $pacientes->links() }}
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -99,12 +103,12 @@
     </div>
 
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             $('#cpf').mask('000.000.000-00');
         });
 
         var confirmDeleteModal = document.getElementById('confirmDeleteModal');
-        confirmDeleteModal.addEventListener('show.bs.modal', function (event) {
+        confirmDeleteModal.addEventListener('show.bs.modal', function(event) {
             var button = event.relatedTarget;
             var id = button.getAttribute('data-id');
             var form = document.getElementById('delete-form');
