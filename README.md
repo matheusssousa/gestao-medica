@@ -9,8 +9,6 @@ O sistema permite o cadastro, consulta, atualização e exclusão dessas entidad
 - PHP 8+
 - MySQL 8+
 - Docker e Docker Compose
-- AdminLTE (Bootstrap)
-- GitFlow para controle de versão
 
 ## Configuração do Ambiente
 
