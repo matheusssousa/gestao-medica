@@ -14,7 +14,7 @@
                             <div class="row mb-3">
                                 <div class="form-group col-md-8">
                                     <label for="nome" class="form-label">{{ __('Nome') }}</label>
-                                    <input id="nome" type="text" class="form-control @error('nome') is-invalid @enderror" name="nome" value="{{ old('nome') }}" required autocomplete="nome" autofocus placeholder="Nome do Paciente">
+                                    <input id="nome" type="text" class="form-control @error('nome') is-invalid @enderror" name="nome" value="{{ old('nome') }}" required autocomplete="nome" autofocus placeholder="Nome do Médico">
                                     @error('nome')
                                         <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
@@ -34,7 +34,7 @@
                             <div class="row mb-3">
                                 <div class="form-group">
                                     <label for="especialidade" class="form-label">{{ __('Especialidade') }}</label>
-                                    <input id="especialidade" type="especialidade" class="form-control @error('especialidade') is-invalid @enderror" name="especialidade" value="{{ old('especialidade') }}" required autocomplete="especialidade" placeholder="Especialidade do Paciente">
+                                    <input id="especialidade" type="especialidade" class="form-control @error('especialidade') is-invalid @enderror" name="especialidade" value="{{ old('especialidade') }}" required autocomplete="especialidade" placeholder="Especialidade do Médico">
                                     @error('especialidade')
                                         <div class="invalid-feedback">
                                             <strong>{{ $message }}</strong>
